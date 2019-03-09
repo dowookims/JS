@@ -44,7 +44,6 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
-      
       flex : 1;
       justify-content : center;
       align-items : center;
@@ -63,11 +62,11 @@
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
-      border :1px solid red;
       flex : 1 0 auto;
       display : flex;
       justify-content : center;
       align-items : center;
+      cursor : pointer;
     }
 
     .panel > *:first-child  { transform: translateY(-100%); }
@@ -124,10 +123,16 @@
 
   <script>
     const panels = document.querySelectorAll('.panel');
-
+    let eventList = []
     function toggleOpen(){
       console.log('hi')
+      console.log(this)
       this.classList.toggle('open');
+      if (len(eventList)>0){
+        eventList.pop
+      }
+      eventList.append(this)
+
     }
 
     function toggleActive(e) {
