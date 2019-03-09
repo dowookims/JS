@@ -125,13 +125,12 @@
     const panels = document.querySelectorAll('.panel');
     let eventList = []
     function toggleOpen(){
-      console.log('hi')
-      console.log(this)
-      this.classList.toggle('open');
-      if (len(eventList)>0){
-        eventList.pop
+      if (eventList.length>0){
+        const bfc = eventList.pop()
+        bfc.classList.remove('open')
       }
-      eventList.append(this)
+      this.classList.toggle('open')
+      eventList.push(this)
 
     }
 
